@@ -107,7 +107,6 @@ class WebBrowser : NSObject {
 		list.append(WebBrowser("Sleipnir", http: "shttp://", https: "shttps://", asParam: false))
 		list.append(WebBrowser("Aloha Browser", http: "alohabrowser://open?link=", https: "alohabrowser://open?link=", asParam: true))
 		list.append(WebBrowser("i-FILTER Browser", http: "ifilter://", https: "ifilters://", asParam: false))
-		list.append(WebBrowser("Fennec Browser", http: "fennec://open-url?url=", https: "fennec://open-url?url=", asParam: true))
 		list.append(WebBrowser("CroPlus", http: "chromtorhttp://", https: "chromtorhttps://", asParam: false))
 		list.append(WebBrowser("MobileIron Web@Work", http: "mibrowser://", https: "mibrowsers://", asParam: false))
 		list.append(WebBrowser("Ohajiki D Web Browser", http: "oodhttp://", https: "oodhttps://", asParam: false))
