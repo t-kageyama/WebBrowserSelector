@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlechromes</string>
+		<string>googlechrome</string>
+		<string>firefox</string>
+		<string>firefox-focus</string>
+		<string>touch-https</string>
+		<string>touch-http</string>
+		<string>microsoft-edge-https</string>
+		<string>microsoft-edge-http</string>
+		<string>brave</string>
+		<string>ilunascapes</string>
+		<string>ilunascape</string>
+		<string>shttps</string>
+		<string>shttp</string>
+		<string>alohabrowser</string>
+		<string>smooz</string>
+		<string>oodhttps</string>
+		<string>oodhttp</string>
+		<string>kaspersky-safebrowser-https</string>
+		<string>kaspersky-safebrowser-http</string>
+		<string>ifilters</string>
+		<string>ifilter</string>
+		<string>fennec</string>
+		<string>chromtorhttps</string>
+		<string>chromtorhttp</string>
+		<string>opera-https</string>
+		<string>opera-http</string>
+		<string>mibrowsers</string>
+		<string>mibrowser</string>
+	</array>
+</dict>
+</plist>
