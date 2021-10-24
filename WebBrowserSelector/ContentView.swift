@@ -18,10 +18,9 @@ struct ContentView: View {
 	@State private var browser: String
 	@State private var browserIndex = 0
 	fileprivate var _webBrowsers = [WebBrowser]()
-	fileprivate var _safariAsDefault = true
 
 	init() {
-		_safariAsDefault = WebBrowser.addWebBrowsers(&_webBrowsers)
+		WebBrowser.addWebBrowsers(&_webBrowsers)
 		browser = _webBrowsers[0].title
 		print("init: done! browser: \(browser)")
 	}
@@ -40,7 +39,7 @@ struct ContentView: View {
 						let urlString = webBrowser.webBroeswerURL(ContentView.QIITA_URL)
 						if let url = URL(string: urlString) {
 							let enable = UIApplication.shared.canOpenURL(url)
-							if index == 0 || enable {
+							if enable {
 								Button(webBrowser.title) {
 									browser = webBrowser.title
 									browserIndex = index
@@ -57,18 +56,26 @@ struct ContentView: View {
 					.keyboardType(.URL)	// URL input keyboard.
 					.disableAutocorrection(true)	// no auto correction.
 					.autocapitalization(.none)	// no capitalizing.
+					.submitLabel(.go)	// return key -> "go"
+					.onSubmit {
+						gotoURL()
+					}
 					.padding()
 				Button("Go") {
-					let webBrowser = _webBrowsers[browserIndex]
-					let urlString = webBrowser.webBroeswerURL(urlInput)
-					if urlString.count > 0 {
-						if let url = URL(string: urlString) {
-							UIApplication.shared.open(url, options: [:], completionHandler: nil)
-						}
-					}
+					gotoURL()
 				}
 			}
 		}.padding()
+	}
+
+	func gotoURL() {
+		let webBrowser = _webBrowsers[browserIndex]
+		let urlString = webBrowser.webBroeswerURL(urlInput)
+		if urlString.count > 0 {
+			if let url = URL(string: urlString) {
+				UIApplication.shared.open(url, options: [:], completionHandler: nil)
+			}
+		}
 	}
 }
 

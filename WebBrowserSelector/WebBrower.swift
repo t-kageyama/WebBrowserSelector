@@ -91,20 +91,9 @@ class WebBrowser : NSObject {
 	/**
 	 add web browser definition into the web browser list.
 	 - parameter list: web browser list.
-	 - returns: true if Safari is default browser.
 	 */
-	class func addWebBrowsers(_ list: inout [WebBrowser]) -> Bool {
-		var safariAsDefault = true
-		let url = URL(string: ContentView.QIITA_URL)
-		var webBrowser: WebBrowser! = nil
-
-		if (UIApplication.shared.canOpenURL(url!)) {
-			webBrowser = WebBrowser("Safari", http: "http://", https: "https://", asParam: false)
-		} else {
-			safariAsDefault = false	// Safari is not a default web browser.
-			webBrowser = WebBrowser("Default Browser", http: "http://", https: "https://", asParam: false)
-		}
-		list.append(webBrowser)
+	class func addWebBrowsers(_ list: inout [WebBrowser]) {
+		list.append(WebBrowser("Default Browser", http: "http://", https: "https://", asParam: false))
 		list.append(WebBrowser("Google Chrome", http: "googlechrome://", https: "googlechromes://", asParam: false))
 		list.append(WebBrowser("Firefox", http: "firefox://open-url?url=", https: "firefox://open-url?url=", asParam: true))
 		list.append(WebBrowser("Firefox Focus", http: "firefox-focus://open-url?url=", https: "firefox-focus://open-url?url=", asParam: true))
@@ -122,7 +111,5 @@ class WebBrowser : NSObject {
 		list.append(WebBrowser("CroPlus", http: "chromtorhttp://", https: "chromtorhttps://", asParam: false))
 		list.append(WebBrowser("MobileIron Web@Work", http: "mibrowser://", https: "mibrowsers://", asParam: false))
 		list.append(WebBrowser("Ohajiki D Web Browser", http: "oodhttp://", https: "oodhttps://", asParam: false))
-
-		return safariAsDefault
 	}
 }
